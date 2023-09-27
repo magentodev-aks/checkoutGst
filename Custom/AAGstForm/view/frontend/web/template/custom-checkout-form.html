@@ -1,0 +1,20 @@
+<div class="gst-selected">
+    <input type="radio" id="html" name="fav_language" value="HTML">
+    <legend data-bind="i18n: 'Need a GSTIN Invoice'"></legend>
+    <span>In order to claim GST credit, shipping address should be of the same State in which Billing GSTIN is registered</span>    
+</div>
+<div class="gst-form">
+    <form id="custom-checkout-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
+        <fieldset class="fieldset">
+            <!-- ko foreach: getRegion('custom-checkout-form-fields') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </fieldset>
+        <button type="reset">
+            <span data-bind="i18n: 'Reset'"></span>
+        </button>
+        <button type="button" data-bind="click: onSubmit" class="action">
+            <span data-bind="i18n: 'Submit'"></span>
+        </button>
+    </form>
+</div>
